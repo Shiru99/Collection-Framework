@@ -1,4 +1,4 @@
-//################################# JAVA Collections Framework  #############################################
+//################################# JAVA Collections Framework  #########################################
 //         
 // 
 //                       |==> List
@@ -9,10 +9,16 @@
 // 
 //            Iterator --|==> ListIterator
 // 
-//#############################################################################################################
+//########################################################################################################
 
+//      Collection type - Define the Contract/Behavior of the collection 
+//          E.g List (Interface)
+//  
+//      Implementations - How it actually works behind the scenes 
+//          E.g. ArrayList/LinkedList (Implementation)
+// 
 
-//##################################  Collection Interface  ###################################################
+//##################################  Collection Interface  #############################################
 //
 // 
 //      1. have basic ops : add(),size(),remove(),iterator(),addAll(),removeAll(),clear()
@@ -39,18 +45,17 @@
 //                               get(),set(),contains(),isEmpty(),toArray()
 // 
 //              (LinkedList implements both queue & list interface)
-//#############################################################################################################
+//#######################################################################################################
 
-//####################################  Map Interface  #####################################################
+//####################################  Map Interface  ##################################################
 //  
 //          HashMap,EnumMap,LinkedHashMap,WeakHashMap,TreeMap implements Map interface 
 //
-//#############################################################################################################
+//#######################################################################################################
 
 
 
-
-//######################################  Arraylist : dynamic array ########################################
+//######################################  Arraylist : dynamic array #####################################
 
 
 import java.util.ArrayList;
@@ -80,13 +85,16 @@ public class Array_List {
                 ERROR //  ArrayList<int> nums = new ArrayList<int>(); 
                 wrapperclass of int is Integer
 
+                    Integer x = new Integer(11);
+                    System.out.println(++x);            // 12
+
             */
 
         /* 
 
-        ArrayList<String> fruits = new ArrayList<String>();                 // generic takes only Strings 
+        ArrayList<String> fruits = new ArrayList<String>();         // generic takes only Strings 
         
-        // fruits.add(33);                         // ArrayList<String> is not applicable for the arguments (int)
+        // fruits.add(33);              // ArrayList<String> is not applicable for the arguments (int)
         fruits.add("Apple");
         fruits.add("Pineapple");  
         fruits.add("Mango");  
@@ -97,15 +105,15 @@ public class Array_List {
         */
 
 
-
         List<String> fun = new ArrayList<String>();   
 
         fun.add("Apple");
         fun.add("Pineapple");  
         fun.add("Mango");  
 
-        System.out.println(fun);                                    // [Apple, Pineapple, Mango, Alooo]
-        System.out.println(fun.getClass().getSimpleName());         // ArrayList   
+        System.out.println(fun);                                // [Apple, Pineapple, Mango, Alooo]
+        System.out.println(fun.getClass());                     // class java.util.ArrayList
+        System.out.println(fun.getClass().getSimpleName());     // ArrayList   
     
         /*
 
@@ -117,11 +125,9 @@ public class Array_List {
                         List<String> sfun = new LinkedList<String>();
                         fun.addAll(sfun);
 
-                3. so for below object is of ArrayList not of List
-
         */
 
-        fun.add("Alooo"); 
+        fun.add("Alooo");
 
         ArrayList<String> stuff = new ArrayList<String>();
         stuff.add("John");
@@ -134,22 +140,22 @@ public class Array_List {
         fun.addAll(stuff);     // [Apple, Pineapple, Mango, Alooo, John, Doe, 33, 3.14f, true, null]
 
         System.out.println(fun); 
-        System.out.println(fun.get(1));         //  Pineapple
+        // System.out.println(fun.get(1));         //  Pineapple
 
         fun.set(1, "Nagpuri Oranges");
-        System.out.println(fun.get(1));         //  Nagpuri Oranges
+        // System.out.println(fun.get(1));         //  Nagpuri Oranges
 
         fun.remove("Alooo");
         fun.remove(0);
-        System.out.println(fun);            //  [Nagpuri Oranges, Mango, John, Doe, 33, 3.14f, true, null]
+        // System.out.println(fun);         //  [Nagpuri Oranges, Mango, John, Doe, 33, 3.14f, true, null]
 
         // List<String> stuff = new ArrayList<>();
         fun.removeAll(stuff);
-        System.out.println(fun);                    //  [Nagpuri Oranges, Mango]
+        // System.out.println(fun);                    //  [Nagpuri Oranges, Mango]
 
         fun.clear();
-        System.out.println(fun);                    //  []
-        System.out.println(fun.isEmpty());          //  true
+        // System.out.println(fun);                    //  []
+        // System.out.println(fun.isEmpty());          //  true
 
 
         fun.add("Apple");
@@ -158,9 +164,12 @@ public class Array_List {
 
         System.out.println(fun.contains("apple"));          //  false
 
-        Object[] temp0 = fun.toArray();                 // "Object Class"
+
+
+
+        Object[] temp0 = fun.toArray();                     // "Object Class"
         for (Object ob : temp0) {
-            System.out.print(ob);                       // ApplePineappleMango
+            System.out.print(ob+" ");                       // Apple Pineapple Mango 
         }
         System.out.println();
 
@@ -168,10 +177,8 @@ public class Array_List {
         fun.toArray(temp);
         
         for (String string : temp) {
-            System.out.print(string);                       // ApplePineappleMango
+            System.out.print(string+" ");                       // Apple Pineapple Mango
         }
         System.out.println();
-
-
     }
 }
