@@ -5,6 +5,12 @@
 
     Linked List implements both List & Queue interfaces
 
+    //    these methods Throws exceptions :
+    //                  add(), remove(), element()
+
+    //    these methods doesn't Throw exceptions :  (rather returns false/null with same functionalities)
+    //                  offer(), poll(), peek()
+
 */
 
 import java.util.*;
