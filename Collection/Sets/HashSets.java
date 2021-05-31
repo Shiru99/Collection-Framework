@@ -21,11 +21,11 @@
 
     ----------------------------------------------------------------------------------------
 
-    HashSet : uses Hash function (Hash function gives unique output on particular input) which gives unique 
-              location to store that data that's why it take constant time for most of the operations.
+    HashSet : 
+        
+        uses Hash function (Hash function gives unique output on particular input), which gives unique location to store that data, that's why it take constant time for most of the operations.
 
 */
-
 
 import java.util.*;
 
@@ -55,7 +55,6 @@ public class HashSets {
         s3.add("Banana");   
         System.out.println(s3);                 // [Mango, Banana]
 
-        
         
         System.out.println("S2 < S  -> "+s.containsAll(s2));    //  false
         System.out.println("S3 < S -> "+s.containsAll(s3));     //  true
