@@ -18,8 +18,9 @@ public interface Linked_List {
 
 
         // adding at 0th position
-        // timeDiff(ll);                   //  LinkedList --> 221 ms
-        // timeDiff(al);                   //  ArrayList  --> 110944 ms  // better to make ll & convert it to al
+        // timeDiff(ll);                    //  LinkedList --> 221 ms
+        // timeDiff(al);                    //  ArrayList  --> 110944 ms  
+                                            // better to make ll & convert it to al
 
         // adding at the end
         // timeDiff(ll);                   //  LinkedList --> 221 ms
@@ -50,7 +51,7 @@ public interface Linked_List {
     static void timeDiff(List<Integer> l){
         long start = System.currentTimeMillis();
 
-        for(int i=0;i<1000000;i++){
+        for(int i=0;i<1_000_000;i++){
             // l.add(0,i*10);
             l.add(i*10);
         }
