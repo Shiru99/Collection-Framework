@@ -1,8 +1,8 @@
-//####################################  Map Interface  #####################################################
+//####################################  Map Interface  ##############################################
 //  
 //          HashMap,EnumMap,LinkedHashMap,WeakHashMap,TreeMap implements Map interface 
 //
-//#############################################################################################################
+//###################################################################################################
 
 
 /*
@@ -30,88 +30,83 @@
 
 */
 
-
-package DSA.CollectionFramework.Maps;
-
 import java.util.*;
 import java.util.Map.Entry;
 
 public class HashMaps {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
+        
+        Map<String,Integer> hm = new HashMap<>();
+
+        hm.put("One", 1);
+        hm.put("Two", 2);
+        hm.put("Five", 5);
+
+        // System.out.println(hm);                          //  {Five=5, One=1, Two=2}
+
+
+        hm.put("One",11);
+        // System.out.println(hm);                          //  {Five=5, One=11, Two=2}
+
+        System.out.println(hm.putIfAbsent("One",111));      // inserts this pair if doesn't exists
+        // System.out.println(hm);                          //  {Five=5, One=1, Two=2}
+        System.out.println(hm.get("One"));                  //  11
+        System.out.println(hm.get("Three"));                //  null
+
+        System.out.println(hm.containsKey("Three"));                    //  false
+        System.out.println(hm.containsValue(2));                        //  true
 
         
-            Map<String,Integer> hm = new HashMap<>();
+        System.out.println(hm.replace("One",0));                    //  11
+        // System.out.println(hm);                                  //  {Five=5, One=0, Two=2}
+        System.out.println(hm.replace("Nine",9));                   //  null
+        // System.out.println(hm);                                  //  {Five=5, One=0, Two=2}
 
-            hm.put("One", 1);
-            hm.put("Two", 2);
-            hm.put("Five", 5);
+        // replaces only if value matches
+        System.out.println(hm.replace("One",1,101));                //  false => so no replace
+        // System.out.println(hm);                                  //  {Five=5, One=0, Two=2}
+        System.out.println(hm.replace("One",0,101));                //  true => so replace
+        // System.out.println(hm);                                  //  {Five=5, One=101, Two=2}
 
-            System.out.println(hm);                             //  {Five=5, One=1, Two=2}
+        System.out.println(hm.remove("One"));                       //  101
+        // System.out.println(hm);                                  //  {Five=5, Two=2}
+        System.out.println(hm.remove("Two",101));                   //  false => so no remove
+        // System.out.println(hm);                                  //  {Five=5, Two=2}
+        System.out.println(hm.remove("Two",2));                     //  true => so remove
+        // System.out.println(hm);                                  //  {Five=5}
 
-
-            hm.put("One",11);
-            System.out.println(hm);                             //  {Five=5, One=11, Two=2}
-
-            System.out.println(hm.putIfAbsent("One",111));      // inserts this pair if doesn't exists
-            System.out.println(hm);   
-            System.out.println(hm.get("One"));                  //  11
-            System.out.println(hm.get("Three"));                //  null
-
-            System.out.println(hm.containsKey("Three"));                    //  false
-            System.out.println(hm.containsValue(2));                        //  true
-
-            
-            System.out.println(hm.replace("One",0));                    //  11
-            System.out.println(hm);                                     //  {Five=5, One=0, Two=2}
-            System.out.println(hm.replace("Nine",9));                   //  null
-            System.out.println(hm);                                     //  {Five=5, One=0, Two=2}
-
-            // replaces only if value matches
-            System.out.println(hm.replace("One",1,101));                //  false => so no replace
-            System.out.println(hm);                                     //  {Five=5, One=0, Two=2}
-            System.out.println(hm.replace("One",0,101));                //  true => so replace
-            System.out.println(hm);                                     //  {Five=5, One=101, Two=2}
-
-            System.out.println(hm.remove("One"));                       //  101
-            System.out.println(hm);                                     //  {Five=5, Two=2}
-            System.out.println(hm.remove("Two",101));                   //  false => so no remove
-            System.out.println(hm);                                     //  {Five=5, Two=2}
-            System.out.println(hm.remove("Two",2));                     //  true => so remove
-            System.out.println(hm);                                     //  {Five=5}
-
-            
-            hm.put("One", 1);
-            hm.put("Two", 2);
-
-            System.out.println(hm.keySet());            //  [Five, One, Two]
-            System.out.println(hm.values());            //  [5, 1, 2]
-            System.out.println(hm.entrySet());          //  [Five=5, One=1, Two=2]
-            
-
-            //    entryset : 
-            //
-            //    Entry<K,V>{
-            //        K key;
-            //        V value;
-            //    }
-            
-
-            // Set<Entry<String,Integer>> entries = hm.entrySet();
-
-            // for (Entry<String,Integer> entry : entries) {
-            for (Entry<String,Integer> entry : hm.entrySet()) {
-
-                entry.setValue(entry.getValue()*1000);
-            }
-
-            System.out.println(hm);                 //  {Five=5000, One=1000, Two=2000}
-            
         
+        hm.put("One", 1);
+        hm.put("Two", 2);
 
+        System.out.println(hm.keySet());            //  [Five, One, Two]
+        System.out.println(hm.values());            //  [5, 1, 2]
+        System.out.println(hm.entrySet());          //  [Five=5, One=1, Two=2]
+        System.out.println(hm);                     //  {Five=5, One=1, Two=2}
+        
+        /*
+            entryset : 
 
+                    Entry<K,V>{
+                        K key;
+                        V value;
+                    }        
+        
+        */
 
+        Set<Entry<String,Integer>> entries = hm.entrySet();
 
+        for (Entry<String,Integer> entry : entries) {
+            entry.setValue(entry.getValue()*10);
+        }
+        System.out.println(hm);                     //  {Five=50, One=10, Two=20}
+
+        for (Entry<String,Integer> entry : hm.entrySet()) {
+            entry.setValue(entry.getValue()*100);
+        }
+        System.out.println(hm);                     //  {Five=5000, One=1000, Two=2000}
+            
     }
-
 }
