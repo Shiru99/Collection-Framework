@@ -1,12 +1,11 @@
 /*
     Note : 
-            == is a reference comparison, i.e. both objects point to the same memory location
+            
+        == is a reference comparison, i.e. if both objects point to the same memory location
 
-                    By comparing two objects, the value of those objects is not 1. Rather it is their memory 
-                    addresses in the stack that are different since both objects were created using the new 
-                    operator. If we had assigned a to b, then we would've had a different result:
+            By comparing two objects, the value of those objects is not 1. Rather it is their memory addresses in the stack that are different since both objects were created using the new operator. If we had assigned a to b, then we would've had a different result:
 
-            .equals() evaluates to the comparison of values in the objects
+        .equals() evaluates to the comparison of values in the objects
 
 
 
@@ -14,9 +13,7 @@
 
         key -> HashFunction -> int (hashcode)
 
-        hashcode are defined in such a way that they tries uniqueness but still it is possible that two objects have same hashcode
-
-        location of object also contributes in calculation of hashcode of object to maintain uniqueness as much as possible.
+        hashcode are defined in such a way that they tries uniqueness but still it is possible that two objects have same hashcode. location of object also contributes in calculation of hashcode of object to maintain uniqueness as much as possible.
 
     Internal Working of HashMap :
 
@@ -39,43 +36,43 @@
         object class is parent class for java objects, every object of any class inheritances object class
 
         object class methods :
-                                hashcode()
-                                equals()
-                                getClass()
-                                clone()
-                                finalize()
-                                notify()
-                                notifyall()
-                                toString()
-                                wait()
+                                
+            hashcode()
+            equals()
+            getClass()
+            clone()
+            finalize()
+            notify()
+            notifyall()
+            toString()
+            wait()
                         
-                    This methods can be overridden.
+            This methods can be overridden.
                                 
     Best practices : 
-            always use same attributes of an object to generate hashcode & equals both 
-            equals must be persistence (until object is modified, equals must return same value).
+            
+        1. always use same attributes of an object to generate both hashcode & equals.
+        2. equals must be persistence (until object is modified, equals must return same value).
+            
             a.equals(b)  ==> a.hashcode() = b.hashcode()
             equal & hashcode : if you override one, then you should override the other 
                                 
 
     How HashMap works :
 
-        according to hashcode, hash value gets calculated
-        according to hash value HashMap gets index for that object in HashMap-Table[]
-
-        at this index linked list will be there with keys & values.
-        if hashcode matches (if same) ==> check equals (it may possible two obj have same hashcode)
+        1. According to hashcode, hash value gets calculated
+        2. According to hash value HashMap gets index for that object in HashMap-Table[]
+        3. At this index linked list will be there with keys & values.
+        4. If hashcode matches (if same) ==> check equals (it may possible two obj have same hashcode)
         and accordingly required operations take place.
+
 
     The Contract :
 
-        if two objects are equal ==> they must have same hash code
-        if two objects have same hashcode, they may or may not be equal 
+        If two objects are equal ==> they must have same hash code BUT If two objects have same hashcode, they may or may not be equal 
 
 
 */
-
-package DSA.CollectionFramework.Maps;
 
 import java.util.HashSet;
 import java.util.*;
@@ -104,7 +101,7 @@ public class HashCodeNEquals {
         Pen p1 = new Pen(10,"Blue");
         Pen p2 = new Pen(10,"Blue");
 
-        System.out.println(p1==p2);                 //  false
+        System.out.println(p1==p2);                 //  false - as both references are different
         System.out.println(p1.equals(p2));          //  false (initially)
 
         System.out.println(p1);                     //  DSA.Maps.Pen@d716361
@@ -117,7 +114,7 @@ public class HashCodeNEquals {
         System.out.println(p1);                     //  DSA.Maps.Pen@d716361
         System.out.println(p2);                     //  DSA.Maps.Pen@6ff3c5b5
 
-        System.out.println(p1==p2);                 //  false
+        System.out.println(p1==p2);                 //  false - Still references are different
         System.out.println(p1.equals(p2));          //  true 
 
 
@@ -149,7 +146,7 @@ public class HashCodeNEquals {
         pens.add(p2);
 
         System.out.println(pens);               // [DSA.Maps.Pen@1fa484] // only one object
-        
+        System.out.println(pens.size());        // 1
 
     }
 }
@@ -210,6 +207,4 @@ class Pen{
     //     return true;
     // }
         
-
-
 }
