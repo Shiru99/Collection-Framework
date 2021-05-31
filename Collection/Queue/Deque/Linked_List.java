@@ -10,7 +10,6 @@
 */
 
 
-package DSA.CollectionFramework.Collection.Queue.Deque;
 import java.util.*;
 
 public class Linked_List {
@@ -27,9 +26,5 @@ public class Linked_List {
         System.out.println(q.poll());                           //  John
         System.out.println(q.peek());                           //  null
         // System.out.println(q.element());                     //  java.util.NoSuchElementException
-
-
-
-
     }
 }
