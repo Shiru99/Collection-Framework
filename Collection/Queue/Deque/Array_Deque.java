@@ -12,49 +12,49 @@
 //                            add(), remove(), element()
 //                            offer(), poll(), peek()
 //        methods as Stack :
-//                            pop(),peek(),push()
+//                            push(), pop(), peek()
 
 //    2.    Stack extends Vector ==> Deque is better than stack
 */
 
-
-package DSA.CollectionFramework.Collection.Queue.Deque;
 import java.util.*;
 
-public class Array_Deque {
-
+public class Array_Deque 
+{
     public static void main(String[] args) {
         
-        ArrayDeque adq = new ArrayDeque();      // ArrayDeque as Stack
+        Deque adq = new ArrayDeque();
 
-
-         // ArrayDeque as Stack                // better than Stack()
+        // ArrayDeque as Stack                // better than Stack()
 
         adq.push("hmm");
         adq.push(99);
         adq.push(0.01f);
 
-        System.out.println(adq);                    //  [0.01, 99, hmm]
-        System.out.println(adq.pop());              //  0.01
-        System.out.println(adq.pop());              //  99
-        System.out.println(adq.pop());              //  hmm
+        System.out.println(adq.element());
+        System.out.println(adq.peek());
+
+        System.out.println(adq);                        //  [0.01, 99, hmm]
+        // System.out.println(adq.element());           //  0.01
+        // System.out.println(adq.peek());              //  0.01
+
+        System.out.println(adq.pop());                  //  0.01
+        System.out.println(adq.pop());                  //  99
+        System.out.println(adq.pop());                  //  hmm
 
 
         // ArrayDeque as queue
-
-
 
         adq.add("hmm");
         adq.add(99);
         adq.add(0.01f);
 
-        System.out.println(adq);                    //  [hmm, 99, 0.01]
-        System.out.println(adq.remove());           //  hmm
-        System.out.println(adq.remove());           //  99
-        System.out.println(adq.remove());           //  0.01
+        System.out.println(adq);                        //  [hmm, 99, 0.01]
+        // System.out.println(adq.element());           //  hmm
+        // System.out.println(adq.peek());              //  hmm
 
-
-
-    }
-    
+        System.out.println(adq.remove());               //  hmm
+        System.out.println(adq.remove());               //  99
+        System.out.println(adq.remove());               //  0.01
+    }   
 }
