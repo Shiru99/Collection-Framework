@@ -1,3 +1,5 @@
+package Maps;
+
 //####################################  Map Interface  ##############################################
 //  
 //          HashMap,EnumMap,LinkedHashMap,WeakHashMap,TreeMap implements Map interface 
@@ -30,7 +32,9 @@
 
 */
 
-import java.util.*;
+import java.util.Map;
+import java.util.Set;
+import java.util.HashMap;
 import java.util.Map.Entry;
 
 public class HashMaps {
