@@ -1,3 +1,5 @@
+package Collection.Queue.Deque;
+
 /* 
 // 
 //    these methods Throws exceptions :
@@ -10,13 +12,14 @@
 */
 
 
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Linked_List {
     
     public static void main(String[] args) {
         
-        Queue q = new LinkedList();
+        Queue<Object> q = new LinkedList<>();
 
         q.add(99);
         q.offer("John");
