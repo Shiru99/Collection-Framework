@@ -1,3 +1,5 @@
+package Maps;
+
 /*
     Note : 
             
@@ -63,8 +65,7 @@
         1. According to hashcode, hash value gets calculated
         2. According to hash value HashMap gets index for that object in HashMap-Table[]
         3. At this index linked list will be there with keys & values.
-        4. If hashcode matches (if same) ==> check equals (it may possible two obj have same hashcode)
-        and accordingly required operations take place.
+        4. If hashcode matches (if same) ==> check equals (it may possible two obj have same hashcode) and accordingly required operations take place.
 
 
     The Contract :
@@ -75,7 +76,7 @@
 */
 
 import java.util.HashSet;
-import java.util.*;
+import java.util.Set;
 
 public class HashCodeNEquals {
     public static void main(String[] args) {
@@ -85,16 +86,21 @@ public class HashCodeNEquals {
         String a = "BF";
         String b = "Ae";
         String c = "BF";
+        String d = new String("BF");
+
 
         System.out.println(a.hashCode());           //  2116
         System.out.println(b.hashCode());           //  2116
         System.out.println(c.hashCode());           //  2116
+        System.out.println(d.hashCode());           //  2116
 
         System.out.println(a==b);                   //  false
         System.out.println(a==c);                   //  true
+        System.out.println(a==d);                   //  false
 
         System.out.println(a.equals(b));            //  false
-        System.out.println(a.equals(c));            //  false
+        System.out.println(a.equals(c));            //  true
+        System.out.println(a.equals(d));            //  true
 
         */
 
@@ -103,6 +109,7 @@ public class HashCodeNEquals {
 
         System.out.println(p1==p2);                 //  false - as both references are different
         System.out.println(p1.equals(p2));          //  false (initially)
+                                                    //  Default equal for objects - '=='
 
         System.out.println(p1);                     //  DSA.Maps.Pen@d716361
         System.out.println(p2);                     //  DSA.Maps.Pen@6ff3c5b5
@@ -124,7 +131,7 @@ public class HashCodeNEquals {
         System.out.println(p1);                     //  DSA.Maps.Pen@1fa484
         System.out.println(p2);                     //  DSA.Maps.Pen@1fa484
 
-        System.out.println(p1==p2);                 //  false
+        System.out.println(p1==p2);                 //  False - As both references are different
         System.out.println(p1.equals(p2));          //  false 
 
 
@@ -138,7 +145,7 @@ public class HashCodeNEquals {
         System.out.println(p1.hashCode());          //  2073732
         System.out.println(p2.hashCode());          //  2073732
 
-        System.out.println(p1==p2);                 //  false
+        System.out.println(p1==p2);                 //  False - As both references are different
         System.out.println(p1.equals(p2));          //  true 
 
         Set<Pen> pens = new HashSet<>();
