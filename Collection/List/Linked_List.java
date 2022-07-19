@@ -1,3 +1,5 @@
+package Collection.List;
+
 /* 
 
     linked list are preferred for deletion or insertion of elements (not from/at last)
