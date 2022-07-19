@@ -1,4 +1,8 @@
-import java.util.*;
+package SortingTechniques;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class ComparableObjects 
 {    
