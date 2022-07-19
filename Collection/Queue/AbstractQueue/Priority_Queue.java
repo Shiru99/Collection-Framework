@@ -1,3 +1,4 @@
+package Collection.Queue.AbstractQueue;
 
 /* 
 
@@ -5,7 +6,10 @@
 
 */
 
-import java.util.*;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Collections;
+
 
 public class Priority_Queue {
     public static void main(String args[]) 
