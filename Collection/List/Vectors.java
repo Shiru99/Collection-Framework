@@ -1,6 +1,8 @@
+package Collection.List;
+
 /* 
 
-    Vectors are same as Arraylist/Dynamic Array
+    Vectors are same as ArrayList/Dynamic Array
     but
         1.  vectors have all their methods "Synchronized" 
             means  ==>  in case of program running on multi-core, to avoid clashing synchronized is used
