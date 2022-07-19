@@ -1,4 +1,4 @@
-package Vector;
+package Collection.List.Vector;
 /* 
 
     Last IN First OUT        
@@ -27,7 +27,7 @@ public class Stacks {
         // List<String> stackkk = new Stack(); // ERROR bz : push/pop/peek/empty fn are
         // undefined for List
 
-        Stack stackkk = new Stack();
+        Stack<Object> stackkk = new Stack<>();
 
         stackkk.push("John Doe");
         stackkk.push(99);
