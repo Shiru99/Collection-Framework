@@ -1,3 +1,5 @@
+package Collection.Queue.Deque;
+
 /* 
 //
 //    Array_Deque / Array Double Ended Queue / ArrayDeck
@@ -17,13 +19,14 @@
 //    2.    Stack extends Vector ==> Deque is better than stack
 */
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 public class Array_Deque 
 {
     public static void main(String[] args) {
         
-        Deque adq = new ArrayDeque();
+        Deque<Object> adq = new ArrayDeque<>();
 
         // ArrayDeque as Stack                // better than Stack()
 
