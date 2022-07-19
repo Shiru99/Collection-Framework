@@ -1,3 +1,5 @@
+package Collection.List;
+
 //################################# JAVA Collections Framework  #########################################
 //         
 // 
@@ -165,14 +167,16 @@ public class Array_List {
         System.out.println(fun.contains("apple"));          //  false
 
 
+        /////// ArrayList to Array Conversion ///////
 
-
+        // M-1
         Object[] temp0 = fun.toArray();                     // "Object Class"
         for (Object ob : temp0) {
             System.out.print(ob+" ");                       // Apple Pineapple Mango 
         }
         System.out.println();
 
+        // M-2
         String temp[] = new String[fun.size()];
         fun.toArray(temp);
         
