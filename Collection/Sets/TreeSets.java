@@ -1,3 +1,5 @@
+package Collection.Sets;
+
 /*
 
     TreeSet have sorted order of elements, other features are same as HashSet
@@ -6,7 +8,8 @@
 
 */
 
-import java.util.*;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class TreeSets {
     public static void main(String[] args) {
